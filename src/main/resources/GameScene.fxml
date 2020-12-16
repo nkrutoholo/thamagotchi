@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="world.ucode.Controller.GameController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true">
+         <image>
+            <Image url="@Field1.jpg" />
+         </image>
+      </ImageView>
+      <Button onAction="#play" layoutX="40.0" layoutY="500.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="PLAY" />
+      <Button onAction="#feed" layoutX="190.0" layoutY="500.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="FEED" />
+      <Button onAction="#giveWater" layoutX="490.0" layoutY="500.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="GIVE WATER" />
+      <Button onAction="#giveMedicine" layoutX="640.0" layoutY="500.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="GIVE MEDICINE" />
+      <Button onAction="#clean" layoutX="340.0" layoutY="500.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="CLEAN UP" />
+      <ProgressBar fx:id="hp" layoutX="50.0" layoutY="24.0" prefHeight="30.0" prefWidth="200.0" progress="0.0" />
+      <ProgressBar fx:id="happy" layoutX="300.0" layoutY="24.0" prefHeight="30.0" prefWidth="200.0" progress="0.0" />
+      <ProgressBar fx:id="hunger" layoutX="550.0" layoutY="24.0" prefHeight="30.0" prefWidth="200.0" progress="0.0" />
+      <ProgressBar fx:id="water" layoutX="170.0" layoutY="73.0" prefHeight="30.0" prefWidth="200.0" progress="0.0" />
+      <ProgressBar fx:id="cream" layoutX="420.0" layoutY="73.0" prefHeight="30.0" prefWidth="200.0" progress="0.0" />
+      <Text layoutX="124.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HEALTH" />
+      <Text layoutX="247.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THIRST" />
+      <Text layoutX="364.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HAPPINESS" />
+      <Text layoutX="623.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HUNGER" />
+      <Text layoutX="476.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CLEANLINESS" />
+      <ImageView fx:id="petia" fitHeight="150.0" fitWidth="150.0" layoutX="325.0" layoutY="206.0" pickOnBounds="true" />
+      <Button onAction="#quit" layoutX="640.0" layoutY="547.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="QUIT" />
+   </children>
+</AnchorPane>
