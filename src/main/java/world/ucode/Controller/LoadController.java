@@ -15,9 +15,11 @@ public class LoadController {
     @FXML
     public void pokGo() throws Exception {
         DBConection db = new DBConection();
+        db.checkPok(pName.getText(), password.getText());
         Main main = new Main();
         Main.sc = Main.Status.GameScene;
         main.start(Main.currentStage);
+        db.loadPok(pName.getText());
     }
 
     @FXML

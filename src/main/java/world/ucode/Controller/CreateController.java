@@ -39,7 +39,7 @@ public class CreateController {
         Pika.setEffect(null);
         Squirt.setEffect(new Shadow());
         Charm.setEffect(new Shadow());
-        index = 1;
+        index = 0;
     }
 
     @FXML
@@ -47,7 +47,7 @@ public class CreateController {
         Pika.setEffect(new Shadow());
         Squirt.setEffect(null);
         Charm.setEffect(new Shadow());
-        index = 2;
+        index = 1;
     }
 
     @FXML
@@ -55,21 +55,24 @@ public class CreateController {
         Pika.setEffect(new Shadow());
         Squirt.setEffect(new Shadow());
         Charm.setEffect(null);
-        index = 3;
+        index = 2;
     }
 
     @FXML
     public void start() throws Exception {
+        DBConection db = new DBConection();
+        db.createPok(petName.getText(), psswrd.getText(), Double.parseDouble(maxHp.getText()), index);
         Main main = new Main();
         Main.sc = Main.Status.GameScene;
         main.start(Main.currentStage);
         GameController g = Main.loader4.getController();
-        save();
+        db.loadPok(petName.getText());
+//        save();
     }
 
-    public void save() throws SQLException, ClassNotFoundException {
-        String petName1 = petName.getText();
-        DBConection data = new DBConection();
-        data.execTable(petName1, Double.parseDouble(maxHp.getText()), psswrd.getText(), index);
-    }
+//    public void save() throws SQLException, ClassNotFoundException {
+//        String petName1 = petName.getText();
+//        DBConection data = new DBConection();
+//        data.execTable(petName1, Double.parseDouble(maxHp.getText()), psswrd.getText(), index);
+//    }
 }

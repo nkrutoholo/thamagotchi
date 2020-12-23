@@ -15,7 +15,7 @@
             <Image url="@whos_that_pokemon.png" />
          </image>
       </ImageView>
-      <TextField layoutX="132.0" layoutY="300.0" prefHeight="35.0" prefWidth="200.0" />
+      <TextField fx:id="pName" layoutX="132.0" layoutY="300.0" prefHeight="35.0" prefWidth="200.0" />
       <Text layoutX="168.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ENTER NAME">
          <font>
             <Font size="20.0" />
@@ -36,6 +36,6 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <TextField layoutX="132.0" layoutY="367.0" prefHeight="35.0" prefWidth="200.0" />
+      <TextField fx:id="password" layoutX="132.0" layoutY="367.0" prefHeight="35.0" prefWidth="200.0" />
    </children>
 </AnchorPane>

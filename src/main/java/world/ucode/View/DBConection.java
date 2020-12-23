@@ -46,20 +46,99 @@ public class DBConection {
         closeDB();
     }
 
-    public void getData(String name) throws SQLException {
-        String sql = "select * from users where name = '" + name + "';";
-        rs = stmt.executeQuery(sql);
-        GameController.namePet = rs.getString("name");
-        GameController.maxHP = rs.getDouble("max_hp");
-        GameController.imageID = rs.getInt("image_id");
-        GameController.health = rs.getDouble("health_stat");
-        GameController.happiness = rs.getDouble("happiness_stat");
-        GameController.hunger = rs.getDouble("hunger_stat");
-        GameController.thirst = rs.getDouble("thirst_stat");
-        GameController.cleanliness = rs.getDouble("cleanliness_stat");
-        GameController game = Main.loader4.getController();
-        game.setProgressBars(GameController.health, GameController.happiness, GameController.thirst, GameController.cleanless, GameController.eat, GameController.maxHP);
-        game.petia.setImage(GameController.img[rs.getInt("image_id")]);
+    public void createPok(String name, String pass, double maxHP, int pokImage) throws SQLException, ClassNotFoundException {
+        getConection();
+        String sql = "INSERT INTO users(name,password,maxHP,pokImage," +
+                "health,happiness,hunger,thirst,cleanliness) VALUES(?,?,?,?,?,?,?,?,?)";
+        PreparedStatement pstmt = con.prepareStatement(sql);
+        pstmt.setString(1, name);
+        pstmt.setString(2, pass);
+        pstmt.setDouble(3, maxHP);
+        pstmt.setInt(4, pokImage);
+        pstmt.setDouble(5, maxHP);
+        pstmt.setDouble(6, 1);
+        pstmt.setDouble(7, 1);
+        pstmt.setDouble(8, 1);
+        pstmt.setDouble(9, 1);
+        try {
+            pstmt.executeUpdate();
+        } catch(Exception err) {
+            if(err.getMessage().contains("(UNIQUE constraint failed: Pets.name)")) {
+                System.out.println(err);
+            }
+            //System.out.println(err);
+        }
+        closeDB();
     }
 
+    public void checkPok(String name, String pass) throws SQLException, ClassNotFoundException {
+        getConection();
+
+        System.out.println("the loadPet (Console)");
+
+        String sql = "SELECT * FROM users WHERE name = \'" + name + "\';";
+
+        rs = stmt.executeQuery(sql);
+
+        String password = "";
+        try {
+            password = rs.getString("password");
+        } catch(Exception err) {
+            if(err.getMessage().contains("ResultSet closed")) {
+                closeDB();
+            }
+            System.out.println(err);
+        }
+
+        if(password != pass) {
+            System.out.println("invalid password \'" + password + "\' -- \'" + pass + "\' (Console)");
+            System.out.println();
+            closeDB();
+
+        }
+
+        closeDB();
+    }
+
+    public void loadPok(String name) throws SQLException, ClassNotFoundException {
+        getConection();
+        String sql = "select * from users where name = '" + name + "';";
+        rs = stmt.executeQuery(sql);
+        GameController.pokName = rs.getString("name");
+        GameController.maxHP = rs.getDouble("maxHP");
+        GameController.imgID = rs.getInt("pokImage");
+        GameController.health = rs.getDouble("health");
+        GameController.happiness = rs.getDouble("happiness");
+        GameController.eat = rs.getDouble("hunger");
+        GameController.thirst = rs.getDouble("thirst");
+        GameController.cleanless = rs.getDouble("cleanliness");
+        GameController game = Main.loader4.getController();
+        game.setProgressBars(GameController.health, GameController.happiness, GameController.thirst, GameController.cleanless, GameController.eat, GameController.maxHP);
+        game.petia.setImage(GameController.img[rs.getInt("pokImage")]);
+        closeDB();
+    }
+
+    public void savePet(String name, double health, double happiness, double hunger, double thirst, double cleanliness) throws SQLException, ClassNotFoundException {
+        getConection();
+
+        String sql = "UPDATE users SET health = ?, happiness = ?, hunger = ?, thirst = ?, cleanliness = ? WHERE name = \'" + name + "\';";
+        PreparedStatement pstmt = con.prepareStatement(sql);
+
+        pstmt.setDouble(1, health);
+        pstmt.setDouble(2, happiness);
+        pstmt.setDouble(3, hunger);
+        pstmt.setDouble(4, thirst);
+        pstmt.setDouble(5, cleanliness);
+        pstmt.executeUpdate();
+        closeDB();
+    }
+
+    public void deadPet(String name) throws SQLException, ClassNotFoundException {
+        getConection();
+        String sql = "DELETE FROM users WHERE name = \'" + name + "\';";
+        PreparedStatement pstmt = con.prepareStatement(sql);
+        pstmt.setString(1, name);
+        pstmt.executeUpdate();
+        closeDB();
+    }
 }
