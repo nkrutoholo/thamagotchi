@@ -47,6 +47,9 @@ public class GameController implements Initializable {
     public ProgressBar cream;
 
     @FXML
+    public ImageView kal;
+
+    @FXML
     public void play() throws Exception {
 //        happy.setProgress(happy.getProgress() + 0.05d);
         happiness += 0.05d;
@@ -114,7 +117,6 @@ public class GameController implements Initializable {
     public void setProgressBars(double eat, double health, double thirst, double happiness, double cleanless, double maxHp) {
         hp.setProgress((health / (maxHp / 100d)) / 100d);
         hunger.setProgress(eat);
-        hp.setProgress(health);
         water.setProgress(thirst);
         cream.setProgress(cleanless);
         happy.setProgress(happiness);

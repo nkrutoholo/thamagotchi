@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="world.ucode.Controller.LoadController">
    <children>
-      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true">
+      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" style="-fx-background-color: #F4D03F #F4D03F; -fx-border-color: #5DADE2#5DADE2;">
          <image>
             <Image url="@whos_that_pokemon.png" />
          </image>
@@ -21,12 +21,12 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <Button onAction="#back" layoutX="132.0" layoutY="505.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="200.0" text="BACK">
+      <Button layoutX="132.0" layoutY="505.0" mnemonicParsing="false" onAction="#back" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #F4D03F #F4D03F; -fx-border-color: #5DADE2#5DADE2;" text="BACK">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button onAction="#pokGo" layoutX="132.0" layoutY="420.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="200.0" text="POKEMON GO">
+      <Button layoutX="132.0" layoutY="420.0" mnemonicParsing="false" onAction="#pokGo" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #F4D03F #F4D03F; -fx-border-color: #5DADE2#5DADE2;" text="POKEMON GO">
          <font>
             <Font size="20.0" />
          </font>
@@ -37,5 +37,6 @@
          </font>
       </Text>
       <TextField fx:id="password" layoutX="132.0" layoutY="367.0" prefHeight="35.0" prefWidth="200.0" />
+      <Text fx:id="error" layoutX="132.0" layoutY="486.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="200.0" />
    </children>
 </AnchorPane>

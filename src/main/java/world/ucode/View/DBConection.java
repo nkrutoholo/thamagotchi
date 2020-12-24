@@ -46,7 +46,8 @@ public class DBConection {
         closeDB();
     }
 
-    public void createPok(String name, String pass, double maxHP, int pokImage) throws SQLException, ClassNotFoundException {
+    public int createPok(String name, String pass, double maxHP, int pokImage) throws SQLException, ClassNotFoundException {
+        int st = 4;
         getConection();
         String sql = "INSERT INTO users(name,password,maxHP,pokImage," +
                 "health,happiness,hunger,thirst,cleanliness) VALUES(?,?,?,?,?,?,?,?,?)";
@@ -64,15 +65,17 @@ public class DBConection {
             pstmt.executeUpdate();
         } catch(Exception err) {
             if(err.getMessage().contains("(UNIQUE constraint failed: Pets.name)")) {
-                System.out.println(err);
+                st = 5;
             }
-            //System.out.println(err);
+            System.out.println(err);
         }
         closeDB();
+        return st;
     }
 
-    public void checkPok(String name, String pass) throws SQLException, ClassNotFoundException {
+    public int checkPok(String name, String pass) throws SQLException, ClassNotFoundException {
         getConection();
+        int st = 1;
 
         System.out.println("the loadPet (Console)");
 
@@ -85,19 +88,21 @@ public class DBConection {
             password = rs.getString("password");
         } catch(Exception err) {
             if(err.getMessage().contains("ResultSet closed")) {
+                st = 3;
                 closeDB();
+                return st;
             }
             System.out.println(err);
         }
-
-        if(password != pass) {
+        if(pass.equals(password) == false) {
             System.out.println("invalid password \'" + password + "\' -- \'" + pass + "\' (Console)");
             System.out.println();
             closeDB();
-
+            st = 2;
+            return st;
         }
-
         closeDB();
+        return st;
     }
 
     public void loadPok(String name) throws SQLException, ClassNotFoundException {
@@ -113,7 +118,7 @@ public class DBConection {
         GameController.thirst = rs.getDouble("thirst");
         GameController.cleanless = rs.getDouble("cleanliness");
         GameController game = Main.loader4.getController();
-        game.setProgressBars(GameController.health, GameController.happiness, GameController.thirst, GameController.cleanless, GameController.eat, GameController.maxHP);
+        game.setProgressBars(GameController.eat, GameController.health, GameController.thirst, GameController.happiness, GameController.cleanless, GameController.maxHP);
         game.petia.setImage(GameController.img[rs.getInt("pokImage")]);
         closeDB();
     }

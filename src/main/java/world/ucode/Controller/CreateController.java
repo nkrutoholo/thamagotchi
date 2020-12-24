@@ -5,6 +5,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.effect.Shadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import world.ucode.View.DBConection;
 import world.ucode.View.Main;
@@ -31,6 +32,9 @@ public class CreateController {
 
     @FXML
     public TextField psswrd;
+
+    @FXML
+    public Text err;
 
     public static int index = 1;
 
@@ -61,18 +65,30 @@ public class CreateController {
     @FXML
     public void start() throws Exception {
         DBConection db = new DBConection();
-        db.createPok(petName.getText(), psswrd.getText(), Double.parseDouble(maxHp.getText()), index);
-        Main main = new Main();
-        Main.sc = Main.Status.GameScene;
-        main.start(Main.currentStage);
-        GameController g = Main.loader4.getController();
-        db.loadPok(petName.getText());
-//        save();
+        int st = db.createPok(petName.getText(), psswrd.getText(), Double.parseDouble(maxHp.getText()), index);
+        printStatus(st);
+        if (st == 4) {
+            Main main = new Main();
+            Main.sc = Main.Status.GameScene;
+            main.start(Main.currentStage);
+//            GameController g = Main.loader4.getController();
+            db.loadPok(petName.getText());
+        }
     }
 
-//    public void save() throws SQLException, ClassNotFoundException {
-//        String petName1 = petName.getText();
-//        DBConection data = new DBConection();
-//        data.execTable(petName1, Double.parseDouble(maxHp.getText()), psswrd.getText(), index);
-//    }
+    @FXML
+    public void back() throws Exception {
+        Main main = new Main();
+        Main.sc = Main.Status.Menu;
+        main.start(Main.currentStage);
+    }
+
+    public void printStatus(int status) {
+        if(status == 4) {
+            err.setText("Pet created.");
+        }
+        if(status == 5) {
+            err.setText("This name already exists.");
+        }
+    }
 }

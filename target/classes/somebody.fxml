@@ -12,8 +12,8 @@
             <Image url="@Menu.jpg" />
          </image>
       </ImageView>
-      <Button onAction="#newPet" layoutX="325.0" layoutY="400.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="New Pet" />
-      <Button onAction="#loadPet" layoutX="325.0" layoutY="465.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Load Pet" />
-      <Button onAction="#quit" layoutX="325.0" layoutY="530.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Exit" />
+      <Button layoutX="325.0" layoutY="400.0" mnemonicParsing="false" onAction="#newPet" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #F4D03F#F4D03F; -fx-border-color: #5DADE2;" text="New Pet" />
+      <Button layoutX="325.0" layoutY="465.0" mnemonicParsing="false" onAction="#loadPet" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #F4D03F#F4D03F; -fx-border-color: #5DADE2;" text="Load Pet" />
+      <Button layoutX="325.0" layoutY="530.0" mnemonicParsing="false" onAction="#quit" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #F4D03F#F4D03F; -fx-border-color: #5DADE2;" text="Exit" />
    </children>
 </AnchorPane>

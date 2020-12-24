@@ -7,12 +7,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="world.ucode.Controller.EndController">
    <children>
-      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true">
+      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" style="-fx-background-color: #F4D03F #F4D03F; -fx-border-color: #3498DB #3498DB;">
          <image>
             <Image url="@deadPika.jpg" />
          </image>
       </ImageView>
-      <Button onAction="#menu" layoutX="300.0" layoutY="487.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="200.0" text="MAIN MENU" />
-      <Button onAction="#exit" layoutX="300.0" layoutY="538.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="200.0" text="EXIT" />
+      <Button layoutX="300.0" layoutY="487.0" mnemonicParsing="false" onAction="#menu" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #F4D03F #F4D03F; -fx-border-color: #3498DB #3498DB;" text="MAIN MENU" />
+      <Button layoutX="300.0" layoutY="538.0" mnemonicParsing="false" onAction="#exit" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #F4D03F #F4D03F; -fx-border-color: #3498DB #3498DB;" text="EXIT" />
    </children>
 </AnchorPane>
