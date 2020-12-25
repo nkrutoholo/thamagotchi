@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>world.ucode.Controller</OriginalElement>
+  <nodes>
+    <node x="159.26006944444447" y="1018.0">world.ucode.View.Main</node>
+    <node x="95.875" y="55.0">world.ucode.View.Main.Status</node>
+    <node x="410.5416666666667" y="0.0">world.ucode.View.Timer</node>
+    <node x="195.92673611111115" y="1330.0">world.ucode.Controller.MainController</node>
+    <node x="446.2885416666667" y="1296.0">world.ucode.Controller.LoadController</node>
+    <node x="186.71527777777783" y="453.0">world.ucode.Controller.CreateController</node>
+    <node x="0.0" y="1330.0">world.ucode.Controller.EndController</node>
+    <node x="399.6802083333333" y="840.0">world.ucode.View.DBConection</node>
+    <node x="382.7152777777778" y="354.0">world.ucode.Controller.GameController</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="world.ucode.Controller.CreateController" target="world.ucode.View.Main.Status">
+      <point x="0.0" y="-104.0" />
+      <point x="274.7152777777778" y="314.0" />
+      <point x="168.0625" y="314.0" />
+      <point x="19.6875" y="82.0" />
+    </edge>
+    <edge source="world.ucode.Controller.CreateController" target="world.ucode.View.Main">
+      <point x="-70.39999999999998" y="104.0" />
+      <point x="204.31527777777785" y="820.0" />
+      <point x="230.26006944444447" y="820.0" />
+      <point x="230.26006944444447" y="998.0" />
+      <point x="239.01006944444447" y="998.0" />
+      <point x="-7.25" y="-104.0" />
+    </edge>
+    <edge source="world.ucode.View.DBConection" target="world.ucode.Controller.GameController">
+      <point x="-9.1875" y="-49.0" />
+      <point x="463.9927083333333" y="820.0" />
+      <point x="471.7152777777778" y="820.0" />
+      <point x="0.0" y="203.0" />
+    </edge>
+    <edge source="world.ucode.Controller.GameController" target="world.ucode.View.Timer">
+      <point x="0.0" y="-203.0" />
+      <point x="471.7152777777778" y="334.0" />
+      <point x="485.95833333333337" y="334.0" />
+      <point x="-15.083333333333329" y="137.0" />
+    </edge>
+    <edge source="world.ucode.Controller.EndController" target="world.ucode.View.Main">
+      <point x="0.0" y="-15.0" />
+      <point x="76.0" y="1266.0" />
+      <point x="173.76006944444447" y="1266.0" />
+      <point x="-72.5" y="104.0" />
+    </edge>
+    <edge source="world.ucode.Controller.GameController" target="world.ucode.View.Main.Status">
+      <point x="-59.33333333333334" y="-203.0" />
+      <point x="412.38194444444446" y="304.0" />
+      <point x="181.1875" y="304.0" />
+      <point x="32.8125" y="82.0" />
+    </edge>
+    <edge source="world.ucode.Controller.LoadController" target="world.ucode.View.Main.Status">
+      <point x="66.39999999999998" y="-49.0" />
+      <point x="595.6885416666667" y="1276.0" />
+      <point x="611.5061342592593" y="1276.0" />
+      <point x="611.5061342592593" y="294.0" />
+      <point x="194.3125" y="294.0" />
+      <point x="45.9375" y="82.0" />
+    </edge>
+    <edge source="world.ucode.Controller.MainController" target="world.ucode.View.Main">
+      <point x="0.0" y="-15.0" />
+      <point x="275.92673611111115" y="1276.0" />
+      <point x="231.76006944444447" y="1276.0" />
+      <point x="-14.5" y="104.0" />
+    </edge>
+    <edge source="world.ucode.View.Main" target="world.ucode.View.Main.Status">
+      <point x="-50.75" y="-104.0" />
+      <point x="195.51006944444447" y="978.0" />
+      <point x="119.38020833333337" y="978.0" />
+      <point x="119.38020833333337" y="334.0" />
+      <point x="154.9375" y="334.0" />
+      <point x="6.5625" y="82.0" />
+    </edge>
+    <edge source="world.ucode.Controller.EndController" target="world.ucode.View.Main.Status">
+      <point x="-50.66666666666663" y="-15.0" />
+      <point x="25.33333333333337" y="1276.0" />
+      <point x="61.493634259259295" y="1276.0" />
+      <point x="61.493634259259295" y="294.0" />
+      <point x="102.4375" y="294.0" />
+      <point x="-45.9375" y="82.0" />
+    </edge>
+    <edge source="world.ucode.Controller.GameController" target="world.ucode.View.DBConection">
+      <point x="35.599999999999966" y="203.0" />
+      <point x="507.3152777777778" y="790.0" />
+      <point x="482.3677083333333" y="790.0" />
+      <point x="9.1875" y="-49.0" />
+    </edge>
+    <edge source="world.ucode.Controller.LoadController" target="world.ucode.View.DBConection">
+      <point x="33.19999999999999" y="-49.0" />
+      <point x="562.4885416666666" y="1276.0" />
+      <point x="546.4215277777778" y="1276.0" />
+      <point x="546.4215277777778" y="988.0" />
+      <point x="531.9802083333334" y="988.0" />
+      <point x="58.80000000000001" y="49.0" />
+    </edge>
+    <edge source="world.ucode.View.DBConection" target="world.ucode.View.Main">
+      <point x="0.0" y="49.0" />
+      <point x="473.1802083333333" y="998.0" />
+      <point x="326.01006944444447" y="998.0" />
+      <point x="79.75" y="-104.0" />
+    </edge>
+    <edge source="world.ucode.View.Timer" target="world.ucode.View.DBConection">
+      <point x="45.25000000000006" y="137.0" />
+      <point x="546.2916666666667" y="334.0" />
+      <point x="571.2152777777778" y="334.0" />
+      <point x="571.2152777777778" y="810.0" />
+      <point x="519.1177083333333" y="810.0" />
+      <point x="45.9375" y="-49.0" />
+    </edge>
+    <edge source="world.ucode.View.DBConection" target="world.ucode.Controller.CreateController">
+      <point x="-64.3125" y="-49.0" />
+      <point x="408.8677083333333" y="800.0" />
+      <point x="274.7152777777778" y="800.0" />
+      <point x="0.0" y="104.0" />
+    </edge>
+    <edge source="world.ucode.View.Main.Status" target="world.ucode.View.Main">
+      <point x="-19.6875" y="82.0" />
+      <point x="128.6875" y="314.0" />
+      <point x="97.38020833333337" y="314.0" />
+      <point x="97.38020833333337" y="998.0" />
+      <point x="166.51006944444447" y="998.0" />
+      <point x="-79.75" y="-104.0" />
+    </edge>
+    <edge source="world.ucode.View.Timer" target="world.ucode.Controller.GameController">
+      <point x="15.083333333333343" y="137.0" />
+      <point x="516.125" y="334.0" />
+      <point x="531.0486111111112" y="334.0" />
+      <point x="59.33333333333334" y="-203.0" />
+    </edge>
+    <edge source="world.ucode.View.Main" target="world.ucode.View.DBConection">
+      <point x="50.75" y="-104.0" />
+      <point x="297.01006944444447" y="978.0" />
+      <point x="414.3802083333333" y="978.0" />
+      <point x="-58.8" y="49.0" />
+    </edge>
+    <edge source="world.ucode.Controller.MainController" target="world.ucode.View.Main.Status">
+      <point x="-53.33333333333337" y="-15.0" />
+      <point x="222.59340277777778" y="1256.0" />
+      <point x="86.38020833333337" y="1256.0" />
+      <point x="86.38020833333337" y="304.0" />
+      <point x="115.5625" y="304.0" />
+      <point x="-32.8125" y="82.0" />
+    </edge>
+    <edge source="world.ucode.View.Timer" target="world.ucode.View.Main">
+      <point x="-45.25" y="137.0" />
+      <point x="455.7916666666667" y="334.0" />
+      <point x="176.21527777777783" y="334.0" />
+      <point x="176.21527777777783" y="958.0" />
+      <point x="224.51006944444447" y="958.0" />
+      <point x="-21.75" y="-104.0" />
+    </edge>
+    <edge source="world.ucode.Controller.GameController" target="world.ucode.View.Main">
+      <point x="-35.60000000000002" y="203.0" />
+      <point x="436.1152777777778" y="820.0" />
+      <point x="389.1802083333333" y="820.0" />
+      <point x="389.1802083333333" y="968.0" />
+      <point x="282.51006944444447" y="968.0" />
+      <point x="36.25" y="-104.0" />
+    </edge>
+    <edge source="world.ucode.Controller.CreateController" target="world.ucode.View.DBConection">
+      <point x="35.19999999999999" y="104.0" />
+      <point x="309.9152777777778" y="790.0" />
+      <point x="427.2427083333333" y="790.0" />
+      <point x="-45.9375" y="-49.0" />
+    </edge>
+    <edge source="world.ucode.Controller.LoadController" target="world.ucode.View.Main">
+      <point x="-66.4" y="-49.0" />
+      <point x="462.8885416666667" y="1256.0" />
+      <point x="289.76006944444447" y="1256.0" />
+      <point x="43.5" y="104.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="532.0" y="601.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
