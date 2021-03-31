@@ -1,0 +1,2 @@
+# thamagotchi
+pokemon thamagotchi game
