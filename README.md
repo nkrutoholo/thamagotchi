@@ -1,2 +1,5 @@
 # thamagotchi
-pokemon thamagotchi game
+pokemon thamagotchi game on Java
+
+
+MVC pattern learning
